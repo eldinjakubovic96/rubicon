@@ -1,0 +1,12 @@
+Prvo je potrebno konektovati se na portal:
+
+az login
+
+Izvrsiti komandu:
+
+terraform init
+terraform plan
+terraform apply -auto-approve
+
+Napomena:
+Nekad bude potrebno 2-3 puta executati ove komande kako bi de resurci naloadali u resursnu grupu. 
