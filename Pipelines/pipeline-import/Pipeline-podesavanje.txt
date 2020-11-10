@@ -1,1 +1,0 @@
-Urađen je export JSON fileova koji sadrze taskove u pipeline-u. Potrebno je importovati pipeline kako bi se uspjesno deployala stranica.
