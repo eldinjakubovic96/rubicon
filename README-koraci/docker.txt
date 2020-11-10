@@ -1,0 +1,18 @@
+#Login u container
+az acr login --name crrubicondevops001
+
+#Povlacenje containera
+docker run -it hello-world
+
+#Login (kredencijali: container(crrubicondevops001)->Settings->Access keys->Admin user=Enable i kopirati username i password)
+docker login crrubicondevops001.azurecr.io
+
+#Docker push
+docker tag hello-world crrubicondevops001.azurecr.io/rubiconimage
+docker push crrubicondevops001.azurecr.io/rubiconimage
+
+#Docker Pull
+docker pull crrubicondevops001.azurecr.io/rubiconimage
+
+#Docker tag
+docker tag <image-id> crrubicondevops001.azurecr.io/rubiconimage:rubiconimage

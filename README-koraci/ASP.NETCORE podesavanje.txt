@@ -1,0 +1,50 @@
+cd C:\
+
+mkdir rubicon
+
+git clone https://github.com/eldinjakubovic96/dotnet-core-db-app.git
+
+dotnet tool install -g dotnet-ef
+
+dotnet ef database update
+
+rm Migrations -r
+
+dotnet ef migrations add InitialCreate
+ 
+
+$env:ConnectionStrings:MyDbConnection="Server=tcp:sql-rubicon-devops-001.database.windows.net,1433;Database=sqldb-rubicon-devops-001;User ID=rubicon-user;Password=Babaroga1$;Encrypt=true;Connection Timeout=30;"
+
+https://whatismyipaddress.com/
+az sql server firewall-rule create --name AllowLocalClient --server sql-rubicon-devops-001 --resource-group rg-rubicon-devops-001 --start-ip-address=188.127.105.214 --end-ip-address=188.127.105.214
+
+
+dotnet ef database update
+
+git add .
+git commit -m "SQL conn"
+
+az webapp deployment user set --user-name rubideploy --password Babaroga1$
+
+
+az webapp create --resource-group rg-rubicon-devops-001 --plan plan-rubicon-devops-001 --name coredbapp --deployment-local-git --runtime "DOTNETCORE|3.1"
+#https://rubideploy@coredbapp.scm.azurewebsites.net/app-rubicon-devops-001.git
+
+az webapp config connection-string set --resource-group rg-rubicon-devops-001 --name app-rubicon-devops-001 --settings MyDbConnection="Server=tcp:sql-rubicon-devops-001.database.windows.net,1433;Database=sqldb-rubicon-devops-001;User ID=rubicon-user;Password=Babaroga1$;Encrypt=true;Connection Timeout=30;" --connection-string-type SQLAzure
+
+git remote add azure https://rubideploy@coredbapp.scm.azurewebsites.net/app-rubicon-devops-001.git
+
+--------------------------
+
+git add .
+
+git commit -m "First commit"
+
+git push origin master
+
+----------------------------------------------------------------------------------
+Allow azure services and resources to access this server
+
+sql-rubicon-devops-001 -> Security -> Firewalls and virtual networks:
+
+Allow Azure services and resources to access this serve = Yes
