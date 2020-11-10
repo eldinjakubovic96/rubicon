@@ -1,4 +1,6 @@
-napraviti file resources.tf i spasiti ga u folder terraform sa nazivom resources.tf
+#Terraform podesavanja
+
+Napraviti file resources.tf i spasiti ga u folder terraform sa nazivom resources.tf
 
 Prvo je potrebno konektovati se na portal:
 
