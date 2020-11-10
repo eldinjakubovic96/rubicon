@@ -1,5 +1,12 @@
 #Terraform podesavanja
 
+Editor: VS Code
+
+Skinute extenzije:
+Azure Git Repos
+GashiCorp Terraform
+Powershell
+
 1.Terraform download
 2.Ukoliko kroz powershell executamo komande, prebaciti exe u folder u kojem cemo uraditi komandu init(u nasem slucaju terraform).
   U nasem slucaju je to pipeline koji povlaci samo terraform file sa resursima.
