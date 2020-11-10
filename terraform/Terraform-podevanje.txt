@@ -1,3 +1,5 @@
+napraviti file resources.tf i spasiti ga u folder terraform sa nazivom resources.tf
+
 Prvo je potrebno konektovati se na portal:
 
 az login
@@ -9,4 +11,4 @@ terraform plan
 terraform apply -auto-approve
 
 Napomena:
-Nekad bude potrebno 2-3 puta executati ove komande kako bi de resurci naloadali u resursnu grupu. 
+Nekad bude potrebno 2-3 puta executati ove komande kako bi de resursi naloadali u resursnu grupu. 
